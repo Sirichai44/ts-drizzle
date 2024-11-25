@@ -19,6 +19,16 @@ VALUES
 ('Alice Johnson', 'alicej@example.com'),
 ('Bob Brown', 'bobbrown@example.com');
 ```
+
+```sql
+CREATE TABLE posts (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(200) NOT NULL,
+    content TEXT NOT NULL,
+    user_id INT REFERENCES users(id),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
 ---
 Structure
 ```
